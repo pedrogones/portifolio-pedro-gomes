@@ -1,0 +1,273 @@
+/* ===============================
+   BRAND & UTILIDADES
+================================= */
+:root{
+  --brand: #2a6df6;
+  --muted: #6c757d;
+  --card-radius: 12px;
+}
+
+.text-brand { color: #fff !important; }
+
+
+/* ===============================
+   HOVERS / MICROINTERAÇÕES
+================================= */
+.hover-lift {
+  transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s;
+  border-radius: var(--card-radius);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(17,24,39,0.08);
+}
+
+
+/* ===============================
+   PORTFÓLIO
+================================= */
+.portfolio-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.portfolio-media img {
+  transition: transform .5s ease;
+}
+.portfolio-media:hover img {
+  transform: scale(1.06);
+}
+.portfolio-hover{
+  position: absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.45) 100%);
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+.portfolio-media:hover .portfolio-hover {
+  opacity: 1;
+}
+
+.logo-script {
+    font-family: 'Outfit', cursive !important;
+    font-size: 1.8rem;        /* ajuste igual ao StartBootstrap */
+    letter-spacing: 1px;
+    color: #f6c23e;           /* amarelo igual ao tema */
+}
+
+/* ===============================
+   TIMELINE - AGENCY FIX + PREMIUM
+================================= */
+.timeline > li .timeline-image {
+  margin-top: 0.4rem;
+  width: 150px;
+  height: 150px;
+  color: #fff;
+}
+.timeline > li .timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* melhora painéis */
+.timeline > li .timeline-panel {
+  padding: 20px 30px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.timeline > li:hover .timeline-panel {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* mobile fix */
+@media (max-width: 768px){
+  .timeline > li .timeline-panel {
+    margin-top: 20px;
+  }
+  .timeline > li.timeline-inverted .timeline-panel {
+    margin-top: 20px;
+  }
+}
+
+
+/* ===============================
+   TEAM
+================================= */
+.team-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.btn-social {
+  border-radius: 10px;
+  padding: .5rem .6rem;
+  transition: transform .18s, box-shadow .18s;
+}
+.btn-social:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+
+
+/* ===============================
+   HEADINGS - PREMIUM
+================================= */
+.section-heading {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+.section-subheading {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+
+/* ===============================
+   ACESSIBILIDADE
+================================= */
+a:focus, button:focus {
+  outline: 3px solid rgba(42,109,246,0.16);
+  outline-offset: 3px;
+}
+/* ===========================================
+   TIMELINE MODERNA — Estilo Apple
+=========================================== */
+
+.timeline-modern {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    max-width: 900px;
+}
+
+.timeline-modern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.08);
+    transform: translateX(-50%);
+}
+
+/* ITEM */
+.timeline-modern li {
+    position: relative;
+    width: 100%;
+    margin: 60px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* ICON / FOTO */
+.timeline-modern .tl-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    background: #fff;
+}
+
+.timeline-modern .tl-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CARD */
+.timeline-modern .tl-card {
+    width: 45%;
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+    position: relative;
+    animation: floatFade .9s ease both;
+}
+
+/* Alternância esquerda/direita */
+.timeline-modern li:nth-child(odd) .tl-card {
+    margin-right: auto;
+    transform: translateX(-40px);
+}
+
+.timeline-modern li:nth-child(even) .tl-card {
+    margin-left: auto;
+    transform: translateX(40px);
+}
+
+/* Títulos */
+.timeline-modern .tl-card h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.timeline-modern .tl-card h5 {
+    font-size: 1rem;
+    color: var(--brand);
+    margin-bottom: 12px;
+}
+.timeline-modern .tl-card p {
+    color: #555;
+}
+
+/* ===========================================
+   MOBILE
+=========================================== */
+@media (max-width: 768px) {
+
+    .timeline-modern::before {
+        left: 30px;
+    }
+
+    .timeline-modern li {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .timeline-modern .tl-icon {
+        position: relative;
+        left: 0;
+        transform: none;
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+
+    .timeline-modern .tl-card {
+        width: calc(100% - 120px);
+        margin: 0 !important;
+        transform: translateX(0) !important;
+    }
+}
+  
+/* ===========================================
+   ANIMAÇÃO (scroll suave estilo Apple)
+=========================================== */
+@keyframes floatFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
